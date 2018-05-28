@@ -12,21 +12,17 @@ import UIKit
 class ArticleListTableViewController : UITableViewController {
     
     private var viewModel :ArticleListViewModel = ArticleListViewModel()  {
-        
         didSet {
             self.tableView.reloadData()
         }
     }
-    
     
     var didSelect: (ArticleViewModel) -> () = { _ in }
     var addArticleTapped: () -> () = {}
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = self.viewModel.title
-        
+        self.title = viewModel.title
         loadArticles()
     }
     
@@ -39,23 +35,18 @@ class ArticleListTableViewController : UITableViewController {
         // this web service should use generic types. Again this is not part of the implementation
         // as we are focusing on MVVM model
         Webservice().getArticles(url: url) { articles in
-            print(articles)
-            
             let articles = articles.map { article in
                 return ArticleViewModel(article :article)
             }
-            
             self.viewModel = ArticleListViewModel(articles :articles)
         }
     }
  
     @IBAction func addArticleButtonTapped(_ sender: Any) {
-        
-        addArticleTapped() 
+        addArticleTapped()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let articleViewModel = self.viewModel.articles[indexPath.row]
         didSelect(articleViewModel)
     }
@@ -65,10 +56,8 @@ class ArticleListTableViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let articleViewModel = self.viewModel.articles[indexPath.row]
-        
         cell.textLabel?.text = articleViewModel.title
         return cell 
     }

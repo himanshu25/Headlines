@@ -29,7 +29,6 @@ class ChangePasswordTableViewController : UITableViewController {
     }
     
     @IBAction func save() {
-        
         if self.viewModel.isValid {
             // update the password
             print("update the user's password")

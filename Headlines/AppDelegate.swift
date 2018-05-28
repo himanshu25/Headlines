@@ -15,16 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var app :App?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        
+        window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "articleListVC") as! ArticleListTableViewController
         let navigationController = UINavigationController.init(rootViewController: viewController)
         app = App(nav: navigationController)
-        self.window?.rootViewController = navigationController
-        self.window?.makeKeyAndVisible()
-        
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
         return true
     }
 

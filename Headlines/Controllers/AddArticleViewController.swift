@@ -32,14 +32,12 @@ class AddArticleViewController : UIViewController {
     }
     
     @IBAction func AddArticleButtonPressed(_ sender: Any) {
-        
         self.viewModel.title.value = "hello world"
         self.viewModel.description.value = "description"
         
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.viewModel = AddArticleViewModel()
     }

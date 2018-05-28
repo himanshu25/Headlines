@@ -10,8 +10,8 @@ import Foundation
 
 struct AddArticleViewModel {
     
-    var title :Dynamic<String> = Dynamic("")
-    var description :Dynamic<String> = Dynamic("")
+    var title = Dynamic("")
+    var description = Dynamic("")
 }
 
 extension AddArticleViewModel {
