@@ -13,7 +13,7 @@
         <!--Articles-->
         <scene sceneID="NHZ-eg-DGF">
             <objects>
-                <tableViewController id="xgW-Ip-Ca7" customClass="ArticleListTableViewController" customModule="Headlines" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="articleListVC" id="xgW-Ip-Ca7" customClass="ArticleListTableViewController" customModule="Headlines" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2UE-rA-rur">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,7 @@
         <!--Add Article View Controller-->
         <scene sceneID="9CU-cM-bAT">
             <objects>
-                <viewController storyboardIdentifier="AddArticleViewController" id="LJh-jO-Oij" customClass="AddArticleViewController" customModule="Headlines" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addArticleVC" id="LJh-jO-Oij" customClass="AddArticleViewController" customModule="Headlines" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ppb-ci-ZTa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +98,7 @@
         <!--Article Details View Controller-->
         <scene sceneID="nku-hQ-zON">
             <objects>
-                <viewController storyboardIdentifier="ArticleDetailsViewController" id="E5V-Ue-nK6" customClass="ArticleDetailsViewController" customModule="Headlines" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="articleDetailVC" id="E5V-Ue-nK6" customClass="ArticleDetailsViewController" customModule="Headlines" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UMq-02-qMB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

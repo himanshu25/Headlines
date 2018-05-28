@@ -13,15 +13,12 @@ class App {
     
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let navigationController :UINavigationController
-    
-    init(window :UIWindow) {
-        
-        navigationController = window.rootViewController as! UINavigationController
-        
+
+    init(nav :UINavigationController) {
+        navigationController = nav
         guard let articleListTVC = navigationController.viewControllers.first as? ArticleListTableViewController else {
             fatalError("ArticleListTableViewController does not exist")
         }
-        
         articleListTVC.didSelect = showArticleDetails
         articleListTVC.addArticleTapped = showAddArticle
         
@@ -29,17 +26,14 @@ class App {
     
     func showAddArticle() {
         
-        let addArticleNC = storyboard.instantiateViewController(withIdentifier: "AddArticleNavigationController") as! UINavigationController
-        
-        navigationController.present(addArticleNC, animated: true, completion: nil)
+        let addArticleNC = storyboard.instantiateViewController(withIdentifier: "addArticleVC") as! AddArticleViewController
+        navigationController.pushViewController(addArticleNC, animated: true)
     }
     
     func showArticleDetails(articleViewModel :ArticleViewModel) {
         
-        let articleDetailVC = storyboard.instantiateViewController(withIdentifier: "ArticleDetailsViewController") as! ArticleDetailsViewController
-        
+        let articleDetailVC = storyboard.instantiateViewController(withIdentifier: "articleDetailVC") as! ArticleDetailsViewController
         articleDetailVC.articleDetailViewModel = ArticleDetailViewModel(articleViewModel: articleViewModel)
-        
         navigationController.pushViewController(articleDetailVC, animated: true)
     }
     
